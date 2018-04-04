@@ -1,0 +1,20 @@
+{%extends '../base.html'%}
+{% block page_title%}Latest||{{block.super}}{% endblock page_title %}
+{%block content%}
+{%if not post%}
+					<div>	
+					<strong>Latest Post</strong>
+					</div>	
+{% for post in latest_post %}
+					
+                    <div class="well well-sm">
+                      <div><h3 style="display:inline"><a href="{%url 'Post:detail' post.id%}">{{post.Title}}</a></h3>
+                      	<p style="display:inline">By {{post.userName}} at <small>{{post.pub_date.time}}</small></p>
+                      	<div><p id="Category">{{post.Category}}</p> <p id="Category">{{post.Category}}</p></div>
+                        </div>
+                    </div>
+                {% endfor %}
+{%else%}
+<h3>No Post Available</h3>
+{%endif%}               
+{%endblock content%}                

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block page_title%}{{object.Title}}{% endblock page_title %}
+{% block content %}
+<div class="title">
+	<div><h3 style="display:inline">{{object.Title}}</h3> by <h4 style="display:inline">{{object.userName}}</h4>
+</div>
+<div class="content">
+	<div><h4>{{object.Content}}</h4></div>
+
+</div>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{% block page_title%}Dates||{{block.super}}{% endblock page_title %}
+{%block content %}
+
+<div>
+	<strong>Story on</strong>
+</div>
+{%for bydate in dates%}
+<p><a href="{%url 'Post:datesdetails' bydate.id%}">{{bydate.pub_date}}</a></p>
+{%endfor%}
+
+
+{%endblock content%}
