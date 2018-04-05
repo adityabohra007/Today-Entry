@@ -1,0 +1,20 @@
+{%extends "registration/base.html"%}
+{%block content%}
+<div class="row">
+	<div class="col-md-5 col-xs-4"></div>
+	<div class="col-md-4 col-xs-5">
+{%if user.is_authenticated%}
+{{user.username}}Already Logged in
+{%else%}
+<h2>Login</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+
+</form>
+{%endif%}
+</div>
+</div>
+
+{%endblock content%}

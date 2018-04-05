@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>{% block page_title %}Today{% endblock page_title%}</title>
+        
+        {%include 'snippets/css.html'%}
+    </head>
+    <body>
+        <div class="header">
+            <h1><a href="{%url 'users:index' %}"><center>Todays Entry</center></a></h1>
+        </div>
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content%}
+                Hello
+                {% endblock content%}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

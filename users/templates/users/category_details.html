@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%block content%}
+{%if not category%}
+<div class="row">
+	<div class="col-md-5">
+		<h3>{{ob.Category}}</h3>
+	</div>
+
+</div>
+{%else%}
+<h3>Not Category selected</h3>
+{%endif%}
+{%endblock content%}

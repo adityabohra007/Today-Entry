@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block title%}Categories||{{super.block}}{%endblock%}
+{%block content%}
+{%if category_list%}
+<div class="row">
+	<div class="col-md-5">
+		{%for ob in category_list%}
+		<p><a href="{%url 'users:cat' ob.id%}">{{ob.Category}}</a></p>
+		{%endfor%}
+		</div>
+</div>
+{%else%}
+<h3>Not Category</h3>
+{%endif%}
+{%endblock%}
