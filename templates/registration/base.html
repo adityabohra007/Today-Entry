@@ -12,6 +12,17 @@
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
+                    <h3><a href="{%url 'users:index'    %}">Posts</a>
+                        {% if user.is_authenticated %}
+  <h3>Hi {{ user.username }}!</h3>
+{% else %}
+<div class="col-md-3 col-xs-3">
+<div class='Not-loggedin' style="padding:20px;color:black;" >
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}"><h3>login</h3></a>|<a href="{%url 'users:signup' %}">SignUp</a>
+</div>
+</div>
+{% endif %}</h3>
                 {% block content%}
                 Hello
                 {% endblock content%}
